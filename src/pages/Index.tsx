@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   Lock,
@@ -11,6 +10,7 @@ import {
 } from "lucide-react";
 import QuickAccessIcon from "@/components/QuickAccessIcon";
 import AppListItem from "@/components/AppListItem";
+import Footer from "@/components/Footer";
 
 const apps = [
   {
@@ -37,7 +37,7 @@ const Index = () => {
   const [activeTab, setActiveTab] = useState("unlock");
 
   return (
-    <div className="min-h-screen bg-background text-white p-6">
+    <div className="min-h-screen bg-background text-white p-6 pb-24">
       {/* Header */}
       <header className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-2">
@@ -112,6 +112,8 @@ const Index = () => {
           <AppListItem key={app.name} {...app} />
         ))}
       </div>
+
+      <Footer />
     </div>
   );
 };
