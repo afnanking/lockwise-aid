@@ -11,6 +11,7 @@ import {
 import QuickAccessIcon from "@/components/QuickAccessIcon";
 import AppListItem from "@/components/AppListItem";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const apps = [
   {
@@ -44,7 +45,9 @@ const Index = () => {
           <Lock className="w-8 h-8 text-accent-orange" />
           <h1 className="text-2xl font-bold">App Lock</h1>
         </div>
-        <Settings className="w-6 h-6 text-white/80" />
+        <Link to="/settings">
+          <Settings className="w-6 h-6 text-white/80" />
+        </Link>
       </header>
 
       {/* Quick Access */}
@@ -53,21 +56,25 @@ const Index = () => {
           icon={Vault}
           label="Vault"
           color="bg-accent-orange"
+          to="/vault"
         />
         <QuickAccessIcon
           icon={Trash2}
           label="Remove junk"
           color="bg-blue-500"
+          to="/remove-junk"
         />
         <QuickAccessIcon
           icon={Palette}
           label="Theme"
           color="bg-purple-500"
+          to="/theme"
         />
         <QuickAccessIcon
           icon={Bell}
           label="Notifications"
           color="bg-green-500"
+          to="/notifications"
         />
       </div>
 
